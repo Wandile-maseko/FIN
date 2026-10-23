@@ -1,0 +1,35 @@
+# --- Web API (FastAPI backend) ---
+fastapi>=0.115,<1.0
+uvicorn[standard]>=0.30
+pydantic>=2.8
+pydantic-settings>=2.4
+python-multipart>=0.0.9
+
+# --- Data layer ---
+SQLAlchemy>=2.0
+pandas>=2.2
+numpy>=1.26,<2.0          # pinned <2.0 for widest wheel compatibility (yfinance/sklearn/st)
+
+# --- Market & SEC feeds ---
+yfinance>=0.2.43
+sec-edgar-downloader>=4.3
+requests>=2.32
+
+# --- Self-learning / analytics ---
+scikit-learn>=1.5         # SGDClassifier online learning (KnowledgeEngine) + RiskCalculator helpers
+joblib>=1.4               # model persistence
+
+# --- NLP / sentiment (LangChain + local LLM) ---
+langchain>=0.3
+langchain-community>=0.3  # ChatOllama integration
+sentence-transformers>=3.0
+torch>=2.3                # pulled in by sentence-transformers; CPU wheel is fine
+
+# --- GUI: Streamlit analyst app ---
+streamlit>=1.38
+plotly>=5.24
+
+# --- Dev / tests ---
+pytest>=8.2
+httpx>=0.27               # FastAPI TestClient transport
+ruff>=0.5
